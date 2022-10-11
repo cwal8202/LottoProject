@@ -1,0 +1,46 @@
+UserNumChoice 에서 [내 번호 가져오기] 클릭 시 mypage의 myNumList를 가져온다.
+
+
+[구매하기]버튼은 관리자에서 가져오는 lottoInstance의 winnerLottoNumbers의 Size가 6일때 활성화가 된다.
+만약 Size가 6이 안되면 [구매하기] 버튼 누르면 "아직 번호가 추첨되지 않았습니다" or '비활성화'시키기 하면 된다.
+
+[구매하기]이 클릭되면 FinalUserNumberList가  dataCenter의 TotalNumList로 들어간다.
+
+[결과확인] 버튼을 클릭되면 Lotto결과창이 열리고 TotalNumList를 불러와서 당첨번호와 비교를 한다.
+
+
+myPage에서 로또번호 선택 클릭시 myLottoChoice가 열린다
+
+
+
+dataCenter의 TotalNumList에 내가 구매한 번호 들어간다.
+
+
+일단 MainPage에서 실행한 UserChoiceNumber에서 결과확인 눌리면 TotalNumList에 유저번호 리스트가 들어간다.
+수정하기//
+
+
+
+수정한것 : Member에 Map<Integer, List> 3개 추가함.
+나의 로또번호 리스트  
+유저가 선택한 번호들 리스트
+유저의 당첨 여부 리스트 
+
+유저의 당첨여부 Text 전부를 담는  public List rankResultTextAll; 을 만들었다.
+Lotto의 1~5줄 [결과확인] 버튼 이벤트 시 제일 밑에 
+rankResultTextAll.add(rankResultText);
+DataCenter.getInstance().getMyInfo().getUserRankingList().put(1, rankResultTextAll);
+이렇게 넣는다.
+보여줄려면 DataCenter.getInstance().getMyInfo().getUserRankingList()
+
+유저의 선택번호가 들어가는것은 UserChoiceNumber에 넣엇다.
+List finalUserNumbersListAll = new ArrayList(); 모든 1~5줄의 6개 랜덤번호 를 다 담은 List
+	finalUserNumbersListAll.add(getFinalUserNumbersList1());
+	finalUserNumbersListAll.add(getFinalUserNumbersList2());
+	finalUserNumbersListAll.add(getFinalUserNumbersList3());
+	finalUserNumbersListAll.add(getFinalUserNumbersList4());
+	finalUserNumbersListAll.add(getFinalUserNumbersList5());
+
+DataCenter.getInstance().getMyInfo().getTotalNumlist().put(1, getFinalUserNumbersList5());
+보여줄려면 DataCenter.getInstance().getMyInfo().getTotalNumlist()
+

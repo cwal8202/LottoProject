@@ -1,0 +1,25 @@
+로또 번호 만들기 : 
+1. Set<Integer> lottoNumber을 만든다.(중복수 없애기 위해 Set을 썼다.)
+2. (Set)lottoNumber의 크기가 7미만이 될때까지 랜덤숫자를 만들어서 lottoNumber에 추가한다.
+3. 만들어진 (Set)lottoNumber를 (ArrayList) lottoList에 넣는다.
+4. (ArrayList) lottoList를 오름차순 정렬을 한다.
+
+숫자를 이미지로 만들기 : 
+1. url에 이미지 경로를 넣는다. (1~45숫자 3종류 즉 135개 이미지를 url에 넣음)
+이때 "images/" + i + ".png"를 썼다.
+2. url값을 가지는 ImageIcon을 만든다.
+3. HashMap을 필드로 만든다. <Integer, ImageIcon> (숫자를 입력받으면 그 숫자의 이미지를 value로 주게함>
+
+lottoChoice : 
+1. 유저가 JLabel 1~45까지 "클릭" 시 이벤트 발생. 이벤트가 발생하는 라벨의 소스와 숫자이미지 라벨의 소스가 같을시 그 숫자의 값을 반환한다. 
+
+흐름 = 
+1. UserChoiceNumber에서 (lottoChoiceButton)[번호선택] 클릭시 lottoChoice창이 열린다.
+2. "lottoChoice"클래스에서 번호를 선택or자동을 한 후 (checkButton)[확인]을 눌리면 "lottoChoice"클래스의 (ArrayList)UserGetLottoNumbers에
+값이 들어가고 "UserChoiceNumber"클래스의 (ArrayList)finalUserNumbersList에 UserGetLottoNumbers의 값이 차례대로 들어간다.
+3. "UserChoiceNumber"클래스의 (nextButton)[결과확인]을 클릭시 "Lotto"클래스로 이동한다.
+4. 이때 Main페이지에서 열었기 때문에 Main페이지에서 관리하는 (nextButton)[결과확인]이벤트처리로 인해서 
+"Lotto"클래스의 (ArrayList)userSelectNumbers에 "UserChoiceNumber"클래스의 (ArrayList)finalUserNumbersList값이 차례대로 들어간다.
+5. 관리자가 추첨버튼을 눌려서 추첨이 되면 (LottoInstance)lottoInstance에 번호가 7개 생성된다. (ArrayList)winnerLottoNumbers에 당첨 번호 7개가 들어간다.
+6.  (resultButtonList)[결과확인]버튼이 활성화된다. (resultButtonList)[결과확인]버튼을 클릭하면 
+userSelectNumbers가 (ArrayList)winnerLottoNumbers을 가지는지 비교 하고 rankResultText에 결과가 나타난다.

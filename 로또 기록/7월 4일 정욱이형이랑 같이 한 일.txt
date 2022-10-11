@@ -1,0 +1,17 @@
+1. [A~E] 버튼 = lottoChoice 여는 이벤트
+2. [A~E]로 연 lottoChoice의 [확인] 이벤트시 =
+(List)finalUserNumbersListA~E에 값 넣기
+
+3. nextButton 클릭시
+결과확인 5번 하기
+
+
+
+5개 만들어야 하는것
+1. 숫자 이미지 6개 (userChoiceNumbersImages1~5[6])
+   숫자 6개(finalUserNumbersList1~5)
+   lottoChoice로 가는 버튼 (lottoChoiceButton1~5) (완료)
+
+이벤트 관리
+UserChoiceNumber에서 연 lottoChoice 의 확인버튼을 누를시
+finalUserNumbersList1~5 에 각각 숫자 들어가게 하기

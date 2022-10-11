@@ -1,0 +1,5 @@
+220702 해야 할 일
+1. lottoChoice에서 선택한 번호를 담고 있는  UserChoiceNumber창을 만들어야 한다.
+(완료)
+2.  UserChoiceNumber창에서 [nextButton]을 눌리면 Lotto(결과창)으로 가게 해야한다.
+(미완료) 이유 : 메인페이지를 만들어야 한다. 이벤트에서 꼬인게 있는것 같다.

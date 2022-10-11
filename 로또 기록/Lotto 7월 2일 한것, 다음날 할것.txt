@@ -1,0 +1,33 @@
+UserChoiceNumber 에서 열린 lottoChoice 의 확인 버튼을 눌리면 
+1)창 닫히게  or 2)포커스가 UserChoiceNumber로 옮겨가기
+둘중 하나의 이벤트가 발생하게 해야한다.
+
+
+오늘 한거 
+1. UserChoiceNumber클래스를 만들었다.
+lottoChoice 클래스를 호출하고 있으며 nextButton을 클릭시 lottoChoice화면이 켜진다.
+UserChoiceNumber에서 lottoChoice화면을 열어서 "확인"버튼을 눌리면 
+UserChoiceNumber의 userChoiceNumbersImages[](JLabel)에 유저가 선택한 번호와 이미지가 들어간다.
+(단 lottoChoice을 열어서 "확인"버튼을 눌리면 이러한 이벤트가 발생하지 않는다. 꼭 UserChoiceNumber에서 열어야지만 "확인"버튼 이벤트 추가되게 했다.
+
+해야할 것 
+UserChoiceNumber에서 버튼 눌리면 lotto(결과창)으로 넘어가며
+lotto(결과창) 창에서 UserChoiceNumber의 유저 선택 번호를 가져온다.
+
+계획
+lotto(결과창)클래스에서 UserChoiceNumber클래스를 호출한다.
+UserChoiceNumber의 버튼이벤트가 발생했을때 내 화면이 켜지게 한다.
+********** 문제점 **************
+만약 지금처럼 lotto(결과창)클래스에서 이벤트발생 객체를 만들면 무조건 lotto클래스가 작동하거나
+lotto클래스에서 켜진 UserChoiceNumber만 이벤트가 발생한다.
+***문제점을 보완하기 위한 계획*****
+메인페이지에서 여는 UserChoiceNumber창 에서는 "다음"버튼을 눌리면 lotto 창이 켜진다. 
+그리고 UserChoiceNumber에서 선택했던 숫자 값들이 lotto에서 가져온다.
+ 
+  **** 문제 해결방법 요약****
+1) 메인페이지에서 UserChoiceNumber(입력창)클래스와 lotto(결과창)클래스를 호출한다.
+2) 메인페이지에서 UserChoiceNumber의 "다음"버튼 이벤트발생시  lotto(결과창)가 켜지도록 한다.
+2 -1) 또한  "다음"버튼 이벤트발생시  lotto(결과창)의 JLabel[ ]에 UserChoiceNumber(입력창)에서 선택한 번호들 나오게 한다.
+3) 메인페이지에서 버튼을 만들어서 UserChoiceNumber창이 켜지게 한다.
+
+********** 문제점 끝**************

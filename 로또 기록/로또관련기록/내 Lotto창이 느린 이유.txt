@@ -1,0 +1,34 @@
+현재 큰 오류가 있다.
+바로 Main창을 열면 엄청 늦게 열린다. (11초)
+**Main창이 늦게 열리는 이유는 UserChoiceNumber를 호출할때 느리게 열린다.
+확인한 방법으로는 MainPage의 필드에 int where = 0;값을 넣은 후 클래스호출, 메소드호출, for문등의 시작과 끝나는 곳에 
+		where++;
+		System.out.println("어디서 느림?" + where);
+을 콘솔에 출력하게 한 후 System.out.println("어디서 느림" + where)가 어디서 늦게 실행되는지 확인했다.
+
+
+그리고 UserChoiceNumber창을 열어도 속도가 엄청 늦게 열린다. (7초)
+lottoChoice를 호출할때 엄청 느려진다.
+
+lottoChoice창을 여니깐 속도가 약간 느리다. (2초)
+numberToImage를 호출할때 속도가 느려진다.
+
+numberToImage를 호출하면 이미지를 url로 만드는 작업에서 속도가 느려진다 (1.5초)
+url이미지는 총 135개 이며 이 이미지를 url로 불러서 ImageIcon으로 바꿀때 총 135번의 반복이 일어나는데 그때 시간이 지체가 된다.
+
+그리고 각 클래스들 마다 numberToImage의 객체를 새로 호출하는데 그때 마다 시간이 지체가 되었다.
+
+그래서 numberToImage를 getInstace화 시켰다. (값이 변하지 않기때문에 한번만 생성되게 했다.) 
+
+
+***코드 수정하는 법 : 
+NumberToImages numberToImages = new NumberToImages(); 를 아에 지우고
+numberToImages.numberImage 를 NumberToImages.getInstance().getNumberToImage()로 바꾸면 된다.
+
+------------->빨리 하는 방법 : 
+numberToImages 를 ReName해서 NumberToImages 로 바꾼다.
+그리고 NumberToImages NumberToImages = new NumberToImages(); 코드를 아에 지운다. "getInstance().getNumberToImage()"를 복사 한 후
+오류나는 빨간색 버튼 눌려서 바로 crtl + v 눌리면 값이 바뀐다.
+
+수정한것 : 
+numberToImage 인스턴스화 하고 모든코드에서 수정함

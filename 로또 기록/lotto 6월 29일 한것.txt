@@ -1,0 +1,15 @@
+클래스 lottoChoice
+복권 번호 입력창에 1~45이미지 삽입 <반복문 + 배열>
+
+클래스 Lotto
+오름차순 + 반복X + 랜덤숫자 7개 가지는 클래스-LottoNumber생성 <Set + List + Random>
+Lotto클래스에서 LottoNumber 숫자 7개 이미지로 구현.
+
+클래스 NumberToImage
+1~45 숫자를 같은 숫자의 이미지로 바꾸었다. 크기 40x40으로 조절	<반복문 + 배열>
+Map((int)숫자, 해당이미지) 구현.
+
+
+
+클래스 Main 
+오름차순 + 반복X + 랜덤 숫자 6개 구현 (연습)

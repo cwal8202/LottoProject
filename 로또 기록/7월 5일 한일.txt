@@ -1,0 +1,33 @@
+마이페이지에서 나의 로또번호 클리갛면 입려창 이랑 로또번호호가 입력되게하기
+
+userNumberImages[i].setIcon((ImageIcon) numberToImage.numberImage.get(UserGetLottoNumbers.get(i))
+
+
+나의 로또번호 데이터
+오늘 한일
+lotto당첨번호 인스턴스화 했다.
+
+UserLottoData 클래스 만듬(인스턴스화함)
+
+1. 내가 선택했던 번호  Lotto의 userSelectNumbers =======> 메인페이지에서 수정함
+2. 내가 몇개 구매했는지  = 나중에 userSelectNumbers1~5를 List로 만들어서 사이즈 로 관리하기
+3. 그때 당첨번호 lottoInstance.getWinnerLottoNumbers()  Lotto(결과창)에서 당첨 Instance 위에 넣었다. 코드 수정은 없다. ==> Lotto에서 코드 추가함
+4. 그때 당첨결과 userLottoData.set5UserRanking(rankResultList[4].getText()); ==> Lotto에서 코드 추가함.
+Lotto에서 코드 추가함
+
+UserLottoData를 만들었다.
+
+User가 선택했던 번호는 userLottoNumbers(List)이다.
+
+필드 : 	private List<Integer> user1LottoNumbers;  (유저의 1번째 줄 로또 6개)
+	private List<Integer> user2LottoNumbers;  (유저의 2번째 줄 로또 6개)
+	private List<Integer> user3LottoNumbers;  (유저의 3번째 줄 로또 6개)
+	private List<Integer> user4LottoNumbers;  (유저의 4번째 줄 로또 6개)
+	private List<Integer> user5LottoNumbers;  (유저의 5번째 줄 로또 6개)
+	
+	private List<Integer> winnerNumbers;
+	private  String user1Ranking;	  (유저의 1번째 줄 로또 결과)
+	private  String user2Ranking;	  (유저의 2번째 줄 로또 결과)
+	private  String user3Ranking;	  (유저의 3번째 줄 로또 결과)
+	private  String user4Ranking;	  (유저의 4번째 줄 로또 결과)
+	private  String user5Ranking;	  (유저의 5번째 줄 로또 결과)
